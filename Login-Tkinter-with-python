@@ -1,0 +1,34 @@
+# Login-Tkinter-with-python
+#how to create Login Tkinter with python simple project for beginners 
+from tkinter import *
+from tkinter import messagebox
+def Login():
+    username=entry1.get()
+    password=entry2.get()
+
+    if (username==input("") and password==input("*")):
+        messagebox.showinfo("","Blank not allowed")
+
+    elif (username=="parvat" and password=="admin"):
+        messagebox.showinfo("","login success")
+
+    else:
+        messagebox.showinfo("","incorrect username and password")
+root=Tk()
+root.title("mawelny")
+root.geometry("500x500")
+global entry1
+global entry2
+
+Label(root,text="Name",font=23).place(x=20,y=20)
+Label(root,text="phone",font=23).place(x=20,y=70)
+
+entry1=Entry(root,width=30,bd=6)
+entry1.place(x=140,y=20)
+entry2=Entry(root,width=30,bd=6,show="*")
+entry2.place(x=140,y=70)
+Button(root,text="login",command="login",height=2,width=8,bd=6).place(x=100,y=120)
+Button(root,text="register",command="register",height=2,width=8,bd=6).place(x=220,y=120)
+
+root.mainloop()
+
